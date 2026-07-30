@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://post-app-ri4c.onrender.com",
+    baseURL: "",
 });
 
 api.interceptors.request.use(

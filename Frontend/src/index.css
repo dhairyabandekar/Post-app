@@ -1,117 +1,122 @@
-*{
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 html {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .create-post-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  height: 100%;
-  width: 100%;
-  background-color: #c2d2ea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: #c2d2ea;
 }
 
 .create-post-section form {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  background-color: aliceblue;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .create-post-section input,
 .create-post-section textarea {
-  width: 300px;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.create-post-section button{
-    padding:10px 20px;
-    background:#4CAF50;
-    color:white;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
-    width:150px;
-    margin-left:75px;
-    transition:all .3s ease;
+.create-post-section button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+    margin-left: 75px;
+    transition: all .3s ease;
 }
 
-.create-post-section button:hover{
-    background:#43A047;
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(76,175,80,.35);
+.create-post-section button:hover {
+    background: #43A047;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(76, 175, 80, .35);
 }
 
 .feed-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  gap: 20px;
-  min-height: 100vh;
-  width: 100%;
-  background-color: #c2d2ea;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #c2d2ea;
+    padding: 20px;
 }
 
-.post-card {
-  width: 420px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+.post-card{
+    width:100%;
+    max-width:420px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
 }
 
 .post-card img {
-  width: 100%;
-  max-height: 600px;
-  height: auto;
-  object-fit: contain;
-  display: block;
+    width: 100%;
+    max-height: 600px;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .post-card h3 {
-  margin: 15px 15px 5px;
-  font-size: 18px;
+    margin: 15px 15px 5px;
+    font-size: 18px;
 }
 
 .post-card p {
-  margin: 0 15px 20px;
-  color: #444;
-  line-height: 1.5;
+    margin: 0 15px 20px;
+    color: #444;
+    line-height: 1.5;
 }
 
-.post-card textarea{
-    width:100%;
-    padding:10px;
-    font-size:16px;
-    margin-top:10px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    resize:none;
+.post-card textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
 }
+
 /* ==========================
    AUTH PAGES
 ========================== */
@@ -126,12 +131,13 @@ html {
     align-items: center;
 }
 
-.auth-card {
-    width: 400px;
+.auth-card{
+    width:90%;
+    max-width:400px;
     background: #fff;
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
 }
 
 .auth-card h1 {
@@ -158,24 +164,24 @@ html {
 .auth-card input:focus {
     outline: none;
     border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76,175,80,.3);
+    box-shadow: 0 0 5px rgba(76, 175, 80, .3);
 }
 
-.auth-card button{
-    padding:13px;
-    border:none;
-    border-radius:8px;
-    background:#4CAF50;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:all .3s ease;
+.auth-card button {
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .3s ease;
 }
 
-.auth-card button:hover{
-    background:#43A047;
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(76,175,80,.35);
+.auth-card button:hover {
+    background: #43A047;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(76, 175, 80, .35);
 }
 
 .auth-card button:disabled {
@@ -218,128 +224,282 @@ html {
     transition: 0.3s;
 }
 
-.edit-btn{
-    flex:1;
-    padding:10px;
-    border:none;
-    border-radius:6px;
-    color:white;
-    cursor:pointer;
-    font-size:15px;
-    background:#1976d2;
-    transition:all .3s ease;
+.edit-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    background: #1976d2;
+    transition: all .3s ease;
 }
 
-.edit-btn:hover{
-    background:#1565C0;
-    transform:translateY(-2px);
-    box-shadow:0 6px 14px rgba(25,118,210,.35);
+.edit-btn:hover {
+    background: #1565C0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(25, 118, 210, .35);
 }
 
-.delete-btn{
-    flex:1;
-    padding:10px;
-    border:none;
-    border-radius:6px;
-    color:white;
-    cursor:pointer;
-    font-size:15px;
-    background:#E53935;
-    transition:all .3s ease;
+.delete-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    background: #E53935;
+    transition: all .3s ease;
 }
 
-.delete-btn:hover{
-    background:#C62828;
-    transform:translateY(-2px);
-    box-shadow:0 6px 14px rgba(229,57,53,.35);
+.delete-btn:hover {
+    background: #C62828;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(229, 57, 53, .35);
 }
 
 .feed-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    width:100%;
+    max-width:1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    padding:24px 32px;
-    margin-bottom:30px;
+    padding: 24px 32px;
+    margin-bottom: 30px;
 
-    background:white;
-    border-radius:16px;
+    background: white;
+    border-radius: 16px;
 }
 
-.feed-header-left{
-    flex:1;
+.feed-header-left {
+    flex: 1;
 }
 
-.header-buttons{
-    display:flex;
-    gap:16px;
-    margin-left:40px;
+.header-buttons {
+    display: flex;
+    gap: 16px;
+    margin-left: 40px;
 }
 
-.create-btn{
-    background:#4F46E5;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    transition:all 0.3s ease;
+.create-btn {
+    background: #4F46E5;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.create-btn:hover{
-    background:#4338CA;
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(79,70,229,.35);
+.create-btn:hover {
+    background: #4338CA;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, .35);
 }
 
-.viewFeed-btn{
-    background:#10B981;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    transition:all 0.3s ease;
+.viewFeed-btn {
+    background: #10B981;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.viewFeed-btn:hover{
-    background:#059669;
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(79,70,229,.35);
+.viewFeed-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, .35);
 }
 
-.logout-btn{
-    background:#EF4444;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    transition:all 0.3s ease;
+.logout-btn {
+    background: #EF4444;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.logout-btn:hover{
-    background:#DC2626;
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(239,68,68,.35);
+.logout-btn:hover {
+    background: #DC2626;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(239, 68, 68, .35);
 }
 
-.profile-btn{
-    background:#10B981;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    transition:all 0.3s ease;
+.profile-btn {
+    background: #10B981;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.profile-btn:hover{
-    background:#059669;
-    transform:translateY(-2px);
-    box-shadow:0 8px 18px rgba(16,185,129,.35);
+.profile-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(16, 185, 129, .35);
+}
+
+/* ===========================
+        RESPONSIVE DESIGN
+=========================== */
+
+/* ---------- Tablets ---------- */
+
+@media (max-width: 1024px) {
+
+    .feed-section {
+        padding: 20px 15px;
+    }
+
+    .feed-header {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .header-buttons {
+        gap: 10px;
+        margin-left: 20px;
+        flex-wrap: wrap;
+    }
+
+    .post-card {
+        max-width: 500px;
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px) {
+
+    .feed-header {
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 18px;
+    }
+
+    .feed-header-left {
+        width: 100%;
+    }
+
+    .feed-header h1 {
+        font-size: 26px;
+    }
+
+    .feed-header p {
+        font-size: 15px;
+    }
+
+    .header-buttons {
+
+        width: 100%;
+        margin-left: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-buttons button {
+        width: 100%;
+    }
+
+    .create-post-section {
+        padding: 20px;
+    }
+
+    .create-post-section form {
+        width: 100%;
+    }
+
+    .create-post-section input,
+    .create-post-section textarea {
+        max-width: 100%;
+    }
+
+    .post-card {
+        max-width: 100%;
+    }
+
+    .post-card h3 {
+        font-size: 17px;
+    }
+
+    .post-card p {
+        font-size: 15px;
+    }
+
+    .post-actions {
+        flex-direction: column;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        width: 100%;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+
+}
+
+
+/* ---------- Small Phones ---------- */
+
+@media (max-width:480px) {
+
+    .feed-section {
+        padding: 12px;
+    }
+
+    .feed-header {
+        padding: 15px;
+    }
+
+    .feed-header h1 {
+        font-size: 22px;
+    }
+
+    .feed-header p {
+        font-size: 14px;
+    }
+
+    .auth-card {
+        padding: 20px;
+    }
+
+    .auth-card h1 {
+        font-size: 28px;
+    }
+
+    .create-post-section h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .post-card h3 {
+        font-size: 16px;
+    }
+
+    .post-card p {
+        font-size: 14px;
+    }
+
 }

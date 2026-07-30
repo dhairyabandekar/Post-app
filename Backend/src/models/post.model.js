@@ -11,12 +11,15 @@ const postSchema = new mongoose.Schema(
             required: true,
             trim: true,
         },
+        author: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            required: true,
+        },
     },
     {
         timestamps: true,
     }
 );
 
-const postModel = mongoose.model("Post", postSchema);
-
-module.exports = postModel;
+module.exports = mongoose.model("Post", postSchema);

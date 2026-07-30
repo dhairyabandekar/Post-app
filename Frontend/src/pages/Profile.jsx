@@ -1,47 +1,27 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
-const Feed = () => {
+const Profile = () => {
     const navigate = useNavigate();
 
+    const user = JSON.parse(localStorage.getItem("user"));
+
     const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
 
     const [editingPostId, setEditingPostId] = useState(null);
     const [editedCaption, setEditedCaption] = useState("");
 
-    const currentUser = JSON.parse(localStorage.getItem("user"));
-
     useEffect(() => {
-        const loadPosts = async () => {
-            try {
-                const response = await api.get("/posts");
-                setPosts(response.data.posts);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        loadPosts();
+        fetchMyPosts();
     }, []);
 
-    const handleDelete = async (postId) => {
-        if (!window.confirm("Are you sure you want to delete this post?"))
-            return;
-
+    const fetchMyPosts = async () => {
         try {
-            await api.delete(`/posts/${postId}`);
-
-            setPosts((prevPosts) =>
-                prevPosts.filter((post) => post._id !== postId)
-            );
-
-            alert("Post deleted successfully!");
+            const response = await api.get("/posts/my-posts");
+            setPosts(response.data.posts);
         } catch (error) {
-            alert(error.response?.data?.message);
+            console.error(error);
         }
     };
 
@@ -76,48 +56,53 @@ const Feed = () => {
         }
     };
 
+    const handleDelete = async (postId) => {
+        if (!window.confirm("Delete this post?")) return;
+
+        try {
+            await api.delete(`/posts/${postId}`);
+
+            setPosts((prevPosts) =>
+                prevPosts.filter((post) => post._id !== postId)
+            );
+
+            alert("Post deleted successfully!");
+        } catch (error) {
+            alert(error.response?.data?.message);
+        }
+    };
+
     const handleLogout = () => {
         localStorage.removeItem("token");
         localStorage.removeItem("user");
         navigate("/");
     };
 
-    if (loading) {
-        return (
-            <section className="feed-section">
-                <h2>Loading posts...</h2>
-            </section>
-        );
-    }
-
     return (
         <section className="feed-section">
-
-            {/* Header */}
 
             <div className="feed-header">
 
                 <div className="feed-header-left">
-                    <h1>MERN Social Feed</h1>
-                    <p>
-                        Welcome back, <strong>{currentUser?.name}</strong> 👋
-                    </p>
+                    <h1>{user.name}'s Profile</h1>
+                    <p>{user.email}</p>
+                    <p>Total Posts: {posts.length}</p>
                 </div>
 
                 <div className="header-buttons">
-
-                    <button
-                        className="profile-btn"
-                        onClick={() => navigate("/profile")}
-                    >
-                        My Profile
-                    </button>
 
                     <button
                         className="create-btn"
                         onClick={() => navigate("/create-post")}
                     >
                         + Create Post
+                    </button>
+
+                    <button
+                        className="viewFeed-btn"
+                        onClick={() => navigate("/feed")}
+                    >
+                        View Feed
                     </button>
 
                     <button
@@ -131,40 +116,16 @@ const Feed = () => {
 
             </div>
 
-            {/* Empty Feed */}
-
             {posts.length === 0 ? (
-                <div className="empty-feed">
-
-                    <h2>📭 No Posts Yet</h2>
-
-                    <p>
-                        Looks like your feed is empty.
-                        <br />
-                        Share your first post with everyone!
-                    </p>
-
-                    <button
-                        className="create-btn"
-                        onClick={() => navigate("/create-post")}
-                    >
-                        Create Your First Post
-                    </button>
-
-                </div>
+                <h2>No Posts Yet</h2>
             ) : (
                 posts.map((post) => (
-                    <div
-                        key={post._id}
-                        className="post-card"
-                    >
+                    <div key={post._id} className="post-card">
 
                         <img
                             src={post.image}
                             alt={post.caption}
                         />
-
-                        <h3>👤 {post.author?.name}</h3>
 
                         {editingPostId === post._id ? (
                             <>
@@ -197,25 +158,23 @@ const Feed = () => {
                             <>
                                 <p>{post.caption}</p>
 
-                                {currentUser?._id === post.author?._id && (
-                                    <div className="post-actions">
+                                <div className="post-actions">
 
-                                        <button
-                                            className="edit-btn"
-                                            onClick={() => startEditing(post)}
-                                        >
-                                            Edit
-                                        </button>
+                                    <button
+                                        className="edit-btn"
+                                        onClick={() => startEditing(post)}
+                                    >
+                                        Edit
+                                    </button>
 
-                                        <button
-                                            className="delete-btn"
-                                            onClick={() => handleDelete(post._id)}
-                                        >
-                                            Delete
-                                        </button>
+                                    <button
+                                        className="delete-btn"
+                                        onClick={() => handleDelete(post._id)}
+                                    >
+                                        Delete
+                                    </button>
 
-                                    </div>
-                                )}
+                                </div>
                             </>
                         )}
 
@@ -227,4 +186,4 @@ const Feed = () => {
     );
 };
 
-export default Feed;
+export default Profile;

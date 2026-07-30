@@ -46,15 +46,22 @@ html {
   border-radius: 4px;
 }
 
-.create-post-section button {
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 150px;
-  margin-left: 75px;
+.create-post-section button{
+    padding:10px 20px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    width:150px;
+    margin-left:75px;
+    transition:all .3s ease;
+}
+
+.create-post-section button:hover{
+    background:#43A047;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(76,175,80,.35);
 }
 
 .feed-section {
@@ -70,20 +77,269 @@ html {
 }
 
 .post-card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  width: 400px;
-  margin-bottom: 20px;
+  width: 420px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
 
 .post-card img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
+  width: 100%;
+  max-height: 600px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .post-card h3 {
-  margin-bottom: 10px;
+  margin: 15px 15px 5px;
+  font-size: 18px;
+}
+
+.post-card p {
+  margin: 0 15px 20px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.post-card textarea{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    resize:none;
+}
+/* ==========================
+   AUTH PAGES
+========================== */
+
+.auth-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #c2d2ea;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    width: 400px;
+    background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c2c2c;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76,175,80,.3);
+}
+
+.auth-card button{
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:#4CAF50;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.auth-card button:hover{
+    background:#43A047;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(76,175,80,.35);
+}
+
+.auth-card button:disabled {
+    background: #8bc68e;
+    cursor: not-allowed;
+}
+
+.auth-card p {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+.auth-card a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 20px;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.edit-btn{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+    background:#1976d2;
+    transition:all .3s ease;
+}
+
+.edit-btn:hover{
+    background:#1565C0;
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(25,118,210,.35);
+}
+
+.delete-btn{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    color:white;
+    cursor:pointer;
+    font-size:15px;
+    background:#E53935;
+    transition:all .3s ease;
+}
+
+.delete-btn:hover{
+    background:#C62828;
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(229,57,53,.35);
+}
+
+.feed-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:24px 32px;
+    margin-bottom:30px;
+
+    background:white;
+    border-radius:16px;
+}
+
+.feed-header-left{
+    flex:1;
+}
+
+.header-buttons{
+    display:flex;
+    gap:16px;
+    margin-left:40px;
+}
+
+.create-btn{
+    background:#4F46E5;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.3s ease;
+}
+
+.create-btn:hover{
+    background:#4338CA;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(79,70,229,.35);
+}
+
+.viewFeed-btn{
+    background:#10B981;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.3s ease;
+}
+
+.viewFeed-btn:hover{
+    background:#059669;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(79,70,229,.35);
+}
+
+.logout-btn{
+    background:#EF4444;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.3s ease;
+}
+
+.logout-btn:hover{
+    background:#DC2626;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(239,68,68,.35);
+}
+
+.profile-btn{
+    background:#10B981;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all 0.3s ease;
+}
+
+.profile-btn:hover{
+    background:#059669;
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(16,185,129,.35);
 }

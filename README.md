@@ -1,52 +1,92 @@
-# 📝 MERN Post Feed App
+# 📝 MERN Social Feed
 
-A full-stack **MERN application** built using **React, Tailwind CSS, Node.js, Express.js, and MongoDB**. The application allows users to create new posts and instantly view them in a dynamic feed through a RESTful API.
+A full-stack **MERN Social Feed** application where users can register, log in, create posts with images, manage their own posts, and explore posts shared by other users. The project is built using **React, Tailwind CSS, Node.js, Express.js, MongoDB, and ImageKit**.
 
 ---
 
 ## 🚀 Features
 
-- ➕ Create New Posts
-- 📰 View All Posts in a Feed
-- ⚡ Real-Time Feed Updates After Posting
-- 📱 Responsive User Interface
-- 🌐 RESTful API
-- ☁️ MongoDB Atlas Integration
-- 🎨 Modern UI with Tailwind CSS
-- ⚡ Fast Development with Vite
+### 👤 Authentication
+- 🔐 User Registration
+- 🔑 Secure Login using JWT Authentication
+- 🔒 Protected Routes
+- 🚪 Secure Logout
+
+### 📸 Posts
+- ➕ Create Posts with Image & Caption
+- 🖼️ Upload Images using ImageKit
+- 📰 View All Posts in the Community Feed
+- ✏️ Edit Your Own Posts
+- 🗑️ Delete Your Own Posts
+
+### 👤 Profile
+- Personal Profile Page
+- View Only Your Uploaded Posts
+- Total Posts Counter
+- Easy Navigation between Profile and Feed
+
+### 🛡️ Authorization
+- Users can edit only their own posts
+- Users can delete only their own posts
+- Other users' posts remain protected
+
+### 🎨 User Interface
+- Responsive Design
+- Clean and Modern UI
+- Interactive Button Hover Effects
+- Easy Navigation
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠️ Tech Stack
 
-### Frontend
+## Frontend
 - React.js
-- Vite
-- Tailwind CSS
+- React Router DOM
 - Axios
+- CSS
+- Vite
 
-### Backend
+## Backend
 - Node.js
 - Express.js
 - MongoDB Atlas
 - Mongoose
+- JWT (jsonwebtoken)
+- bcrypt
+- Multer
+- ImageKit
 - dotenv
 - CORS
 
-### Development Tools
+## Development Tools
 - Visual Studio Code
 - Git & GitHub
 - Postman / Thunder Client
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
-```
+```text
 POST-APP/
+
+├── Backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── db/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── utils/
+│   ├── app.js
+│   ├── server.js
+│   ├── package.json
+│   └── .env
 │
-├── client/
-│   ├── public/
+├── Frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
@@ -57,84 +97,100 @@ POST-APP/
 │   ├── package.json
 │   └── vite.config.js
 │
-├── server/
-│   ├── config/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── package.json
-│   └── server.js
-│
 └── README.md
 ```
 
 ---
 
-## 📱 Application Workflow
+# 📱 Application Workflow
 
-1. User enters a post.
-2. The frontend sends the data to the Express backend.
-3. The backend validates and stores the post in MongoDB Atlas.
-4. The frontend fetches all posts from the API.
-5. Newly created posts appear in the feed.
+1. User registers or logs into the application.
+2. After login, the user is redirected to their profile.
+3. Users can create a post by uploading an image and adding a caption.
+4. Uploaded posts appear on both the Profile page and the Community Feed.
+5. Users can edit or delete only their own posts.
+6. Users can browse posts uploaded by everyone in the Feed.
+7. Users can securely log out.
 
 ---
 
-## 📡 REST API Endpoints
+# 📡 REST API Endpoints
+
+## Authentication
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| GET | `/api/posts` | Fetch all posts |
-| POST | `/api/posts` | Create a new post |
+| POST | `/users/register` | Register a new user |
+| POST | `/users/login` | Login user |
+
+### Posts
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/posts` | Fetch all posts |
+| GET | `/posts/my-posts` | Fetch logged-in user's posts |
+| POST | `/posts` | Create a new post |
+| PATCH | `/posts/:id` | Update your post |
+| DELETE | `/posts/:id` | Delete your post |
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/your-github-username/post-app.git
 ```
 
-### Navigate to the Project
+## Navigate to the Project
 
 ```bash
 cd post-app
 ```
 
-### Install Backend Dependencies
+## Backend Setup
 
 ```bash
-cd server
+cd Backend
 npm install
 ```
 
-### Install Frontend Dependencies
+## Frontend Setup
 
 ```bash
-cd ../client
+cd ../Frontend
 npm install
 ```
 
 ---
 
-## 🔑 Environment Variables
+# 🔑 Environment Variables
 
-Create a `.env` file inside the **server** folder.
+Create a `.env` file inside the **Backend** folder.
 
 ```env
+PORT=3000
+
 MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+
+IMAGEKIT_PUBLIC_KEY=your_public_key
+
+IMAGEKIT_PRIVATE_KEY=your_private_key
+
+IMAGEKIT_URL_ENDPOINT=your_url_endpoint
 ```
 
 ---
 
-## ▶️ Run the Project
+# ▶️ Run the Project
 
-### Backend
+## Backend
 
 ```bash
-cd server
+cd Backend
 npm start
 ```
 
@@ -144,10 +200,10 @@ Runs on:
 http://localhost:3000
 ```
 
-### Frontend
+## Frontend
 
 ```bash
-cd client
+cd Frontend
 npm run dev
 ```
 
@@ -159,48 +215,52 @@ http://localhost:5173
 
 ---
 
-## 🌐 Deployment
+# 🌐 Deployment
 
 | Service | Platform |
 |----------|----------|
 | Frontend | Vercel |
 | Backend | Render |
 | Database | MongoDB Atlas |
+| Image Storage | ImageKit |
 
 ---
 
-## 📚 Learning Outcomes
+# 📚 Learning Outcomes
 
-This project helped me understand:
+Through this project, I gained hands-on experience with:
 
 - MERN Stack Development
-- React Component Architecture
+- React Routing
 - REST API Development
-- Axios for API Communication
-- MongoDB & Mongoose Integration
-- Express.js Routing
-- Responsive UI with Tailwind CSS
+- JWT Authentication
+- Authorization
+- Password Hashing with bcrypt
+- Image Upload using Multer & ImageKit
+- MongoDB & Mongoose
+- Express Middleware
+- React State Management
+- Axios API Integration
+- Protected Routes
 - Environment Variable Management
 - Git & GitHub Workflow
-- Frontend Deployment using Vercel
-- Backend Deployment using Render
+- Frontend & Backend Deployment
 
 ---
 
-## 🔮 Future Enhancements
+# 🔮 Future Enhancements
 
-- Edit Posts
-- Delete Posts
-- User Authentication
-- Image Uploads
-- Like & Comment System
-- Search Posts
-- Pagination
-- User Profiles
+- ❤️ Like & Unlike Posts
+- 💬 Comment System
+- 👤 Profile Picture Upload
+- 📅 Post Timestamp
+- 🔍 Search Users & Posts
+- 📱 Improved Mobile Responsiveness
+- 🔔 Notifications
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Dhairya Bandekar**
 
@@ -209,7 +269,7 @@ This project helped me understand:
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
 If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
 

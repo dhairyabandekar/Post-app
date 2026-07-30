@@ -1,4 +1,4 @@
-# 📝 MERN Social Feed
+# 📝 POSTS APP (MERN Stack)
 
 A full-stack **MERN Social Feed** application where users can register, log in, create posts with images, manage their own posts, and explore posts shared by other users. The project is built using **React, Tailwind CSS, Node.js, Express.js, MongoDB, and ImageKit**.
 

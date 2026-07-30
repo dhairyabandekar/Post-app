@@ -11,10 +11,12 @@ body,
     min-height: 100%;
 }
 
-html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-        'Helvetica Neue', sans-serif;
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+
+    background: #c2d2ea;
 }
 
 /* ==========================
@@ -22,90 +24,142 @@ html {
 ========================== */
 
 .create-post-section {
+
+    width: 100%;
+    min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 20px;
-
-    min-height: 100vh;
-    width: 100%;
 
     padding: 20px;
+
     background: #c2d2ea;
 }
 
 .create-post-section form {
+
     width: 100%;
     max-width: 500px;
 
     display: flex;
     flex-direction: column;
 
+    gap: 15px;
+
     background: aliceblue;
+
     padding: 25px;
 
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
 }
 
 .create-post-section input,
-.create-post-section textarea {
+.create-post-section textarea{
 
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    width:100%;
 
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    font-size:15px;
 }
 
 .create-post-section textarea{
-    resize: vertical;
-    min-height:120px;
+
+    min-height:140px;
+
+    resize:vertical;
 }
 
 .create-post-section button{
 
     width:100%;
-    padding:12px;
 
-    border:none;
-    border-radius:4px;
+    padding:13px;
 
     background:#4CAF50;
+
     color:white;
 
+    border:none;
+
+    border-radius:6px;
+
     cursor:pointer;
+
+    font-size:15px;
+
     transition:.3s;
 }
 
 .create-post-section button:hover{
 
     background:#43A047;
+
     transform:translateY(-2px);
+
     box-shadow:0 8px 18px rgba(76,175,80,.35);
 }
 
+/* ---------- Tablet ---------- */
 
+@media (max-width:768px){
+
+.create-post-section{
+
+    padding:18px;
+}
+
+.create-post-section form{
+
+    padding:22px;
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:480px){
+
+.create-post-section{
+
+    padding:15px;
+}
+
+.create-post-section form{
+
+    padding:18px;
+}
+
+}
 /* ==========================
    FEED
 ========================== */
 
 .feed-section{
 
+    width:100%;
+    min-height:100vh;
+
     display:flex;
     flex-direction:column;
     align-items:center;
 
-    gap:20px;
+    padding:25px;
 
-    width:100%;
-    min-height:100vh;
+    gap:25px;
 
-    padding:20px;
     background:#c2d2ea;
 }
+
+/* ---------- Feed Header ---------- */
 
 .feed-header{
 
@@ -115,73 +169,113 @@ html {
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:20px;
 
-    padding:24px 32px;
+    gap:25px;
+
+    padding:22px 28px;
 
     background:white;
+
     border-radius:16px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 .feed-header-left{
 
     flex:1;
+    min-width:0;
 }
+
+.feed-header-left h1{
+
+    font-size:2rem;
+    margin-bottom:8px;
+
+    color:#222;
+
+    line-height:1.2;
+}
+
+.feed-header-left p{
+
+    color:#555;
+    line-height:1.5;
+}
+
+/* ---------- Header Buttons ---------- */
 
 .header-buttons{
 
     display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+    align-items:center;
+
     justify-content:flex-end;
+
+    gap:15px;
+
+    flex-wrap:wrap;
 }
+
+/* ---------- Post Card ---------- */
 
 .post-card{
 
     width:100%;
-    max-width:500px;
+    max-width:520px;
 
     background:white;
 
-    border-radius:10px;
+    border-radius:14px;
+
     overflow:hidden;
 
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
 .post-card img{
 
     width:100%;
-    max-height:600px;
+    height:auto;
 
-    object-fit:contain;
     display:block;
+
+    object-fit:cover;
 }
 
 .post-card h3{
 
-    margin:15px 15px 5px;
-    font-size:18px;
+    margin:15px 18px 8px;
+
+    font-size:20px;
+
+    color:#222;
 }
 
 .post-card p{
 
-    margin:0 15px 20px;
-    color:#444;
-    line-height:1.5;
+    margin:0 18px 18px;
+
+    color:#555;
+
+    line-height:1.6;
 }
 
 .post-card textarea{
 
     width:100%;
 
-    padding:10px;
+    padding:12px;
+
+    margin-top:12px;
 
     border:1px solid #ccc;
+
     border-radius:8px;
 
     resize:none;
-    font-size:16px;
+
+    font-size:15px;
 }
 
 .empty-feed{
@@ -193,40 +287,50 @@ html {
 
     background:white;
 
-    padding:40px;
-    border-radius:12px;
+    padding:45px 25px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
 /* ==========================
-   TABLET
+        TABLET
 ========================== */
 
-@media(max-width:768px){
+@media (max-width:900px){
 
 .feed-header{
 
     flex-direction:column;
-    text-align:center;
+
+    align-items:flex-start;
+}
+
+.feed-header-left{
+
+    width:100%;
 }
 
 .header-buttons{
 
     width:100%;
-    justify-content:center;
+
+    justify-content:flex-start;
 }
 
 .post-card{
 
-    max-width:100%;
+    max-width:650px;
 }
 
 }
 
 /* ==========================
-   MOBILE
+        MOBILE
 ========================== */
 
-@media(max-width:480px){
+@media (max-width:600px){
 
 .feed-section{
 
@@ -235,17 +339,31 @@ html {
 
 .feed-header{
 
-    padding:20px;
+    padding:18px;
 }
 
-.feed-header h1{
+.feed-header-left{
 
-    font-size:24px;
+    text-align:center;
+}
+
+.feed-header-left h1{
+
+    font-size:1.7rem;
+}
+
+.feed-header-left p{
+
+    font-size:15px;
 }
 
 .header-buttons{
 
+    width:100%;
+
     flex-direction:column;
+
+    gap:12px;
 }
 
 .header-buttons button{
@@ -253,9 +371,14 @@ html {
     width:100%;
 }
 
+.post-card{
+
+    width:100%;
+}
+
 .post-card h3{
 
-    font-size:17px;
+    font-size:18px;
 }
 
 .post-card p{
@@ -263,8 +386,12 @@ html {
     font-size:15px;
 }
 
+.empty-feed{
+
+    padding:35px 20px;
 }
 
+}
 /* ==========================
    AUTH PAGES
 ========================== */
@@ -288,26 +415,31 @@ html {
     width:100%;
     max-width:420px;
 
-    background:white;
+    background:#fff;
 
     padding:35px;
 
-    border-radius:12px;
+    border-radius:14px;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
 .auth-card h1{
 
     text-align:center;
+
     margin-bottom:25px;
+
     color:#2c2c2c;
+
+    font-size:2rem;
 }
 
 .auth-card form{
 
     display:flex;
     flex-direction:column;
+
     gap:18px;
 }
 
@@ -318,9 +450,11 @@ html {
     padding:13px 15px;
 
     border:1px solid #ccc;
+
     border-radius:8px;
 
     font-size:15px;
+
     transition:.3s;
 }
 
@@ -330,7 +464,7 @@ html {
 
     border-color:#4CAF50;
 
-    box-shadow:0 0 5px rgba(76,175,80,.3);
+    box-shadow:0 0 6px rgba(76,175,80,.25);
 }
 
 .auth-card button{
@@ -340,12 +474,15 @@ html {
     padding:13px;
 
     border:none;
+
     border-radius:8px;
 
     background:#4CAF50;
+
     color:white;
 
     font-size:16px;
+
     cursor:pointer;
 
     transition:.3s;
@@ -362,22 +499,28 @@ html {
 
 .auth-card button:disabled{
 
-    background:#8bc68e;
+    background:#9CCC9C;
+
     cursor:not-allowed;
 }
 
 .auth-card p{
 
-    margin-top:20px;
+    margin-top:18px;
 
     text-align:center;
+
     color:#555;
+
+    line-height:1.5;
 }
 
 .auth-card a{
 
     color:#1976d2;
+
     text-decoration:none;
+
     font-weight:600;
 }
 
@@ -386,7 +529,6 @@ html {
     text-decoration:underline;
 }
 
-
 /* ==========================
    POST ACTIONS
 ========================== */
@@ -394,9 +536,10 @@ html {
 .post-actions{
 
     display:flex;
-    gap:10px;
 
-    padding:0 20px 20px;
+    gap:12px;
+
+    padding:0 18px 20px;
 }
 
 .edit-btn,
@@ -404,13 +547,17 @@ html {
 
     flex:1;
 
-    padding:10px;
+    padding:11px;
 
     border:none;
-    border-radius:6px;
+
+    border-radius:8px;
 
     color:white;
+
     font-size:15px;
+
+    font-weight:500;
 
     cursor:pointer;
 
@@ -445,7 +592,64 @@ html {
     box-shadow:0 6px 14px rgba(229,57,53,.35);
 }
 
+/* ==========================
+        TABLET
+========================== */
 
+@media (max-width:768px){
+
+.auth-card{
+
+    max-width:500px;
+
+    padding:30px;
+}
+
+.post-actions{
+
+    flex-direction:column;
+}
+
+.edit-btn,
+.delete-btn{
+
+    width:100%;
+}
+
+}
+
+/* ==========================
+        MOBILE
+========================== */
+
+@media (max-width:480px){
+
+.auth-container{
+
+    padding:15px;
+}
+
+.auth-card{
+
+    padding:22px;
+}
+
+.auth-card h1{
+
+    font-size:1.7rem;
+}
+
+.auth-card input{
+
+    padding:12px;
+}
+
+.auth-card button{
+
+    padding:12px;
+}
+
+}
 /* ==========================
    HEADER BUTTONS
 ========================== */
@@ -462,11 +666,12 @@ html {
 
     color:white;
 
+    font-size:15px;
     font-weight:600;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:all .3s ease;
 }
 
 .create-btn{
@@ -525,61 +730,135 @@ html {
     box-shadow:0 8px 18px rgba(239,68,68,.35);
 }
 
+/* ==========================
+        LARGE TABLETS
+========================== */
+
+@media (max-width:992px){
+
+.feed-header{
+
+    gap:20px;
+}
+
+.header-buttons{
+
+    gap:12px;
+}
+
+.create-btn,
+.profile-btn,
+.viewFeed-btn,
+.logout-btn{
+
+    padding:11px 18px;
+}
+
+}
 
 /* ==========================
-   TABLET
+        TABLETS
 ========================== */
 
 @media (max-width:768px){
 
-.auth-card{
-
-    padding:28px;
-}
-
-.post-actions{
+.feed-header{
 
     flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
-.edit-btn,
-.delete-btn{
+.feed-header-left{
+
+    width:100%;
+}
+
+.header-buttons{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+}
+
+.create-btn,
+.profile-btn,
+.viewFeed-btn,
+.logout-btn{
 
     width:100%;
 }
 
 }
 
-
 /* ==========================
-   MOBILE
+        MOBILE
 ========================== */
 
 @media (max-width:480px){
 
-.auth-container{
+.feed-section{
 
     padding:15px;
 }
 
+.feed-header{
+
+    padding:18px;
+}
+
+.feed-header-left h1{
+
+    font-size:1.6rem;
+}
+
+.feed-header-left p{
+
+    font-size:14px;
+}
+
+.header-buttons{
+
+    grid-template-columns:1fr;
+}
+
+.create-btn,
+.profile-btn,
+.viewFeed-btn,
+.logout-btn{
+
+    width:100%;
+
+    padding:12px;
+}
+
+.post-card{
+
+    border-radius:12px;
+}
+
+.post-card h3{
+
+    font-size:18px;
+}
+
+.post-card p{
+
+    font-size:15px;
+}
+
 .auth-card{
 
-    padding:22px;
+    border-radius:12px;
 }
 
-.auth-card h1{
+.create-post-section form{
 
-    font-size:24px;
-}
-
-.auth-card input{
-
-    padding:12px;
-}
-
-.auth-card button{
-
-    padding:12px;
+    border-radius:12px;
 }
 
 }

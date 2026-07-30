@@ -71,7 +71,6 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
     gap: 20px;
     min-height: 100vh;
     width: 100%;
@@ -81,11 +80,11 @@ html {
 
 .post-card{
     width:100%;
-    max-width:420px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+    max-width:500px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 
 .post-card img {
@@ -273,15 +272,30 @@ html {
     background: white;
     border-radius: 16px;
 }
+.feed-header{
+    width:100%;
+    max-width:1200px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+
+    padding:24px 32px;
+    margin-bottom:20px;
+
+    background:white;
+    border-radius:16px;
+}
 
 .feed-header-left {
     flex: 1;
 }
 
-.header-buttons {
-    display: flex;
-    gap: 16px;
-    margin-left: 40px;
+.header-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
 }
 
 .create-btn {
@@ -352,6 +366,15 @@ html {
     box-shadow: 0 8px 18px rgba(16, 185, 129, .35);
 }
 
+.empty-feed{
+    width:100%;
+    max-width:600px;
+    text-align:center;
+    background:white;
+    padding:40px 25px;
+    border-radius:15px;
+}
+
 /* ===========================
         RESPONSIVE DESIGN
 =========================== */
@@ -384,122 +407,68 @@ html {
 
 /* ---------- Mobile ---------- */
 
-@media (max-width:768px) {
+@media (max-width:768px){
 
-    .feed-header {
+.feed-header{
 
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 18px;
-    }
-
-    .feed-header-left {
-        width: 100%;
-    }
-
-    .feed-header h1 {
-        font-size: 26px;
-    }
-
-    .feed-header p {
-        font-size: 15px;
-    }
-
-    .header-buttons {
-
-        width: 100%;
-        margin-left: 0;
-
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .header-buttons button {
-        width: 100%;
-    }
-
-    .create-post-section {
-        padding: 20px;
-    }
-
-    .create-post-section form {
-        width: 100%;
-    }
-
-    .create-post-section input,
-    .create-post-section textarea {
-        max-width: 100%;
-    }
-
-    .post-card {
-        max-width: 100%;
-    }
-
-    .post-card h3 {
-        font-size: 17px;
-    }
-
-    .post-card p {
-        font-size: 15px;
-    }
-
-    .post-actions {
-        flex-direction: column;
-    }
-
-    .edit-btn,
-    .delete-btn {
-        width: 100%;
-    }
-
-    .auth-card {
-        padding: 25px;
-    }
-
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
 
+.feed-header-left{
+    width:100%;
+}
 
+.header-buttons{
+
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    margin-left:0;
+}
+
+.header-buttons button{
+    width:100%;
+}
+
+.post-card{
+    max-width:100%;
+}
+
+.post-actions{
+    flex-direction:column;
+}
+
+.edit-btn,
+.delete-btn{
+    width:100%;
+}
+
+}
 /* ---------- Small Phones ---------- */
 
-@media (max-width:480px) {
+@media (max-width:480px){
 
-    .feed-section {
-        padding: 12px;
-    }
+.feed-section{
+    padding:12px;
+}
 
-    .feed-header {
-        padding: 15px;
-    }
+.feed-header h1{
+    font-size:24px;
+}
 
-    .feed-header h1 {
-        font-size: 22px;
-    }
+.feed-header p{
+    font-size:14px;
+}
 
-    .feed-header p {
-        font-size: 14px;
-    }
+.post-card h3{
+    font-size:17px;
+}
 
-    .auth-card {
-        padding: 20px;
-    }
-
-    .auth-card h1 {
-        font-size: 28px;
-    }
-
-    .create-post-section h1 {
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .post-card h3 {
-        font-size: 16px;
-    }
-
-    .post-card p {
-        font-size: 14px;
-    }
+.post-card p{
+    font-size:15px;
+}
 
 }
